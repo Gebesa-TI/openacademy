@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="openacademy.curse" id="curse_0">
+        	<field name='name'>Course 0</field>
+        	<field name='description'>This is the description of
+
+        		the curse
+        	</field>
+        </record>
+
+        <record model="openacademy.curse" id="curse_1">
+        	<field name='name'>Course 1</field>
+        	<field name='description'>This is the description of
+
+        		the curse uno
+        	</field>
+        </record>
+
+        <record model="openacademy.curse" id="curse_2">
+        	<field name='name'>Course 2</field>
+        	<field name='description'>This is the description of
+
+        		the curse dos
+        	</field>
+        </record>
+    </data>
+</openerp>
