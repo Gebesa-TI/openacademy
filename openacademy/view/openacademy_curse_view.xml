@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id='action_openacademy_curse' model='ir.actions.act_window'>
+			<field name='name'>Openacademy Curse</field>
+			<field name='res_model'>openacademy.curse</field>
+			<field name='view_type'>form</field>
+			<field name='view_mode'>tree,form,calendar,graph</field>
+		</record>
+
+		<menuitem id="openacademy_main_menu" name="Openacademy"/>
+		<menuitem id="openacademy_menu" name="Openacademy" parent="openacademy_main_menu"/>
+		<menuitem id="openacademy_curse_menu" name="Curse" parent="openacademy_menu" action="action_openacademy_curse"/>
+    </data>
+</openerp>
