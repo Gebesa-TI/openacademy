@@ -19,10 +19,10 @@
         "base",
     ],
     "data": [
-        #"view/some_model_view.xml",
+        "view/openacademy_curse_view.xml",
     ],
     "demo": [
-        "demo/openacademy_curse.xml"
+        "demo/openacademy_curse.xml",
     ],
     "qweb": [
         "static/src/xml/module_name.xml",
