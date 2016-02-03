@@ -12,14 +12,30 @@
         				<h1>
         					<label string='Session'/>
         				</h1>
-        				<group>
-        					<field name='name'/>
-        					<field name="start_date"/>
+        				<group string="General">
+                            <field name="course_id"/>
+                            <field name="name"/>
+                            <field name="instructor_id"/>
+                        </group>
+                        <group string="Schedule">
+                            <field name="start_date"/>
                             <field name="duration"/>
                             <field name="seats"/>
-        				</group>
+                        </group>
+                        <label for="attendee_ids"/>
+                        <field name="attendee_ids" widget='many2many_kanban'/>
         			</sheet>
         		</form>
+        	</field>
+        </record>
+        <record model='ir.ui.view' id='openacademy_session_tree'>
+        	<field name='name'>openacademy_session.tree</field>
+        	<field name='model'>openacademy.session</field>
+        	<field name='arch' type='xml'>
+        		<tree string='Session'>
+        			<field name='name'/>
+        			<field name='course_id'/>
+        		</tree>
         	</field>
         </record>
         <record id='action_openacademy_session' model='ir.actions.act_window'>

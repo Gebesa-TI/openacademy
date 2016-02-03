@@ -20,13 +20,19 @@
 					<sheet>
 						<group>
 							<field name='name'/>
+							<field name='responsible_id'/>
 						</group>
 						<notebook>
 							<page string="Description">
 								<field name='description'/>	
 							</page>
-							<page string="About">
-								Ejemplo de notebooks
+							<page string="Sessions">
+								<field name="session_ids" widget='many2many_tags'>
+                                    <!-- <tree string="Registered sessions">
+                                        <field name="name"/>
+                                        <field name="instructor_id"/>
+                                    </tree> -->
+                                </field>
 							</page>
 						</notebook>
 					</sheet>
@@ -41,6 +47,7 @@
 				<tree string='Curse Tree View'>
 					<field name='name'/>
 					<field name='description'/>
+					<field name='responsible_id'/>
 				</tree>
 			</field>
 		</record>
