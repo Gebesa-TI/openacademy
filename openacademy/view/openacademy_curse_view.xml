@@ -45,4 +45,16 @@
 			</field>
 		</record>
     </data>
+
+    <!-- SEARCH View  --> 
+    <record id="openacademy_curse_search" model="ir.ui.view">
+        <field name="name">Curse search view</field>
+        <field name="model">openacademy.curse</field>
+        <field name="arch" type="xml">
+            <search string="String">
+               <field name='name'/>
+               <field name='description'/>
+            </search>
+        </field>
+    </record>
 </openerp>
