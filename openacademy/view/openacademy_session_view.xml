@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model='ir.ui.view' id='openacademy_session_form'>
+        	<field name='name'>openacademy_session.form</field>
+        	<field name='model'>openacademy.session</field>
+        	<field name='arch' type='xml'>
+        		<form string='Session'>
+        			<header>
+        			</header>
+        			<sheet>
+        				<h1>
+        					<label string='Session'/>
+        				</h1>
+        				<group>
+        					<field name='name'/>
+        					<field name="start_date"/>
+                            <field name="duration"/>
+                            <field name="seats"/>
+        				</group>
+        			</sheet>
+        		</form>
+        	</field>
+        </record>
+        <record id='action_openacademy_session' model='ir.actions.act_window'>
+        	<field name='name'>Openacademy session</field>
+        	<field name='res_model'>openacademy.session</field>
+        	<field name='view_type'>form</field>
+        	<field name='view_mode'>tree,form</field>
+        </record>
+        <menuitem id="openacademy_session_menu" name="Session" parent="openacademy.openacademy_menu" action="action_openacademy_session"/>
+    </data>
+</openerp>

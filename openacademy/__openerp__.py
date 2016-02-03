@@ -20,6 +20,7 @@
     ],
     "data": [
         "view/openacademy_curse_view.xml",
+        "view/openacademy_session_view.xml",
     ],
     "demo": [
         "demo/openacademy_curse.xml",
