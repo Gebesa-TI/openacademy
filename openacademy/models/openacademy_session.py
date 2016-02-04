@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+    # -*- coding: utf-8 -*-
 # © <2016> <Cesar Barron>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
@@ -14,7 +14,9 @@ class OpenacademySession(models.Model):
     duration = fields.Float(digits=(6, 2), help="Duration in days")
     seats = fields.Integer(string="Number of seats")
     instructor_id = fields.Many2one('res.partner',
-                                    string="Instructor")
+                                    string="Instructor",
+                                    domain=['|', ('instructor', '=', True),
+                                    ('category_id.name', 'ilike', "Teacher")])
     course_id = fields.Many2one('openacademy.curse',
                                 ondelete='cascade',
                                 string="Curse",

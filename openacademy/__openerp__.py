@@ -25,6 +25,7 @@
     ],
     "demo": [
         "demo/openacademy_curse.xml",
+        "demo/res_partner_academy.xml",
     ],
     "qweb": [
         "static/src/xml/module_name.xml",
