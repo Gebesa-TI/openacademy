@@ -2,7 +2,7 @@
 # © <2016> <Cesar Barron>
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, fields, models
+from openerp import _, api, fields, models
 
 
 class OpenacademySession(models.Model):
@@ -34,4 +34,23 @@ class OpenacademySession(models.Model):
                 r.taken_seats = 0.0
             else:
                 r.taken_seats = 100.0 * len(r.attendee_ids) / r.seats
+
+    @api.onchange('seats', 'attendee_ids')
+    def _verify_valid_seats(self):
+        if self.seats < 0:
+            return {
+                'warning': {
+                    'title': _("Incorrect 'seats' value"),
+                    'message':
+                    _("The number of available seats may not be negative"),
+                },
+            }
+        if self.seats < len(self.attendee_ids):
+            return {
+                'warning': {
+                    'title': _("Too many attendees"),
+                    'message': _("Increase seats or remove excess attendees"),
+                },
+            }
+
 
