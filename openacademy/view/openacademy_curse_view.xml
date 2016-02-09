@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record id='action_openacademy_curse' model='ir.actions.act_window'>
+			<field name='name'>Openacademy Curse</field>
+			<field name='res_model'>openacademy.curse</field>
+			<field name='view_type'>form</field>
+			<field name='view_mode'>tree,form,calendar,graph</field>
+		</record>
+
+		<menuitem id="openacademy_main_menu" name="Openacademy"/>
+		<menuitem id="openacademy_menu" name="Openacademy" parent="openacademy_main_menu"/>
+		<menuitem id="openacademy_curse_menu" name="Curse" parent="openacademy_menu" action="action_openacademy_curse"/>
+
+		<record model='ir.ui.view' id='openacademy_curse_form'>
+			<field name='name'>openacademy_curse.form</field>
+			<field name='model'>openacademy.curse</field>
+			<field name='arch' type='xml'>
+				<form string='Curse Form'>
+					<sheet>
+						<group>
+							<field name='name'/>
+							<field name='responsible_id'/>
+						</group>
+						<notebook>
+							<page string="Description">
+								<field name='description'/>	
+							</page>
+							<page string="Sessions">
+								<field name="session_ids" widget='many2many_tags'>
+                                    <!-- <tree string="Registered sessions">
+                                        <field name="name"/>
+                                        <field name="instructor_id"/>
+                                    </tree> -->
+                                </field>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record model='ir.ui.view' id='openacademy_curse_tree'>
+			<field name='name'>Curse Tree View</field>
+			<field name='model'>openacademy.curse</field>
+			<field name='arch' type='xml'>
+				<tree string='Curse Tree View'>
+					<field name='name'/>
+					<field name='description'/>
+					<field name='responsible_id'/>
+				</tree>
+			</field>
+		</record>
+    </data>
+
+    <!-- SEARCH View  --> 
+    <record id="openacademy_curse_search" model="ir.ui.view">
+        <field name="name">Curse search view</field>
+        <field name="model">openacademy.curse</field>
+        <field name="arch" type="xml">
+            <search string="String">
+               <field name='name'/>
+               <field name='description'/>
+            </search>
+        </field>
+    </record>
+</openerp>

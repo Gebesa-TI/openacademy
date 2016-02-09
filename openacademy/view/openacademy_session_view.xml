@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model='ir.ui.view' id='openacademy_session_form'>
+        	<field name='name'>openacademy_session.form</field>
+        	<field name='model'>openacademy.session</field>
+        	<field name='arch' type='xml'>
+        		<form string='Session'>
+        			<header>
+        			</header>
+        			<sheet>
+        				<h1>
+        					<label string='Session'/>
+        				</h1>
+        				<group string="General">
+                            <field name="course_id"/>
+                            <field name="name"/>
+                            <field name="instructor_id"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Schedule">
+                            <field name="start_date"/>
+                            <field name="duration"/>
+                            <field name="seats"/>
+                            <field name="taken_seats" widget="progressbar"/>
+                        </group>
+                        <label for="attendee_ids"/>
+                        <field name="attendee_ids" widget='many2many_kanban'/>
+        			</sheet>
+        		</form>
+        	</field>
+        </record>
+        <record model='ir.ui.view' id='openacademy_session_tree'>
+        	<field name='name'>openacademy_session.tree</field>
+        	<field name='model'>openacademy.session</field>
+        	<field name='arch' type='xml'>
+        		<tree string='Session'>
+        			<field name='name'/>
+        			<field name='course_id'/>
+                    <field name="taken_seats" widget="progressbar"/>
+        		</tree>
+        	</field>
+        </record>
+        <record id='action_openacademy_session' model='ir.actions.act_window'>
+        	<field name='name'>Openacademy session</field>
+        	<field name='res_model'>openacademy.session</field>
+        	<field name='view_type'>form</field>
+        	<field name='view_mode'>tree,form</field>
+        </record>
+        <menuitem id="openacademy_session_menu" name="Session" parent="openacademy.openacademy_menu" action="action_openacademy_session"/>
+    </data>
+</openerp>
